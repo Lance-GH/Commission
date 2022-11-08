@@ -34,7 +34,7 @@ void CommissionEmployee::setLastName( const string &last )
 }
 
 // return last name
-void CommissionEmployee::getLastName() const
+string CommissionEmployee::getLastName() const
 {
 	return lastName;
 }
@@ -48,7 +48,7 @@ void CommissionEmployee::setSocialSecurityNumber( const string &ssn )
 // return the social security number
 string CommissionEmployee::getSocialSecurityNumber() const
 {
-	return socialSecurityNUmber;
+	return socialSecurityNumber;
 }
 
 // set gross sales amount
@@ -89,10 +89,10 @@ double CommissionEmployee::earnings() const
 }
 
 // print CommissionEmployee object
-void Commission::print() const
+void CommissionEmployee::print() const
 {
 	cout << "commission employee: " << firstName << ' ' << lastName << 
-		"\nsocial security number" << socialSecurityNumber
+		"\nsocial security number: " << socialSecurityNumber
 		<< "\ngross sales: " << grossSales
 		<< "\ncommission rate: " << commissionRate;
 }
