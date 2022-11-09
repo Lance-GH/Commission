@@ -12,8 +12,10 @@ class BasePlusCommissionEmployee : public CommissionEmployee
 		void setBaseSalary( double );
 		double getBaseSalary() const;
 
-		double earnings() const;
-		void print() const;
+		// the use of the override keyword forces the compiler to check whether the base class has a function with the same function signature
+		// if not, the compiler generates an error
+		virtual double earnings() const override;
+		virtual void print() const override;
 
 	private:
 		double baseSalary;

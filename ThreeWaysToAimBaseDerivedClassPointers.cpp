@@ -27,18 +27,21 @@ int main()
 
 	// aiming base-class pointer at base-class object and print
 	commissionEmployeePtr = &commissionEmployee; // perfectly natural
-	cout << "\n\n\nCalling print with base-class pointer to \nbase-class object invokes base-class print function:\n\n";
+	cout << "\n\n\nCalling virtual function print with base-class pointer to \nbase-class object invokes base-class print function:\n\n";
 	commissionEmployeePtr->print();
 
 	// aiming derived-class object at derived-class object and print
 	basePlusCommissionEmployeePtr = &basePlusCommissionEmployee;
-	cout << "\n\n\nCalling print with derived-class pointer to \nderived-class object invokeds derived-class print function\n\n";
+	cout << "\n\n\nCalling virtual function print with derived-class pointer to \nderived-class object invokeds derived-class print function:\n\n";
 	basePlusCommissionEmployeePtr->print(); // invokes derived-class print
 
 	// aiming base-class pointer at derived-class object and print
 	commissionEmployeePtr = &basePlusCommissionEmployee;
-	cout << "\n\n\nCalling print with base-class pointer to derived-class object\ninvokes base-class print "
-		<< "function on that derived-class object:\n\n";
-	commissionEmployeePtr->print(); // invokes base-class print
+	cout << "\n\nCalling virtual function print with base-class pointer" 
+		"\nto derived-class object, now invokes derived-class print function:\n\n";
+
+	// polymorphism; invokes BasePlusCommissionEmployee's print
+	// base-class pointer to derived-class object
+	commissionEmployeePtr->print();
 	cout << endl;
 }

@@ -24,8 +24,8 @@ class CommissionEmployee
 		void setCommissionRate( double );
 		double getCommissionRate() const;
 
-		double earnings() const;
-		void print() const;
+		virtual double earnings() const;
+		virtual void print() const;
 
 	private:
 		std::string firstName;
