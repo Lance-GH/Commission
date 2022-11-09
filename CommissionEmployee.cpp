@@ -5,12 +5,11 @@ using namespace std;
 
 // constructor
 CommissionEmployee::CommissionEmployee(
-		const string &first, const string &last, const string &ssn,
-		double sales, double rate )
+	const string &first, const string &last, const string &ssn,
+	double sales, double rate )
+	: firstName ( first ), lastName ( last ), socialSecurityNumber( ssn )
+		
 {
-	firstName = first; // should validate
-	lastName = last; // should validate
-	socialSecurityNumber = ssn; // should validate
 	setGrossSales( sales ); // validate and store gross sales
 	setCommissionRate( rate ); // validate and store commission rate	
 }
@@ -85,7 +84,7 @@ double CommissionEmployee::getCommissionRate() const
 
 double CommissionEmployee::earnings() const
 {
-	return commissionRate * grossSales;
+	return getCommissionRate() * getGrossSales();
 }
 
 // print CommissionEmployee object

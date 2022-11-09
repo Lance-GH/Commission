@@ -33,14 +33,15 @@ double BasePlusCommissionEmployee::getBaseSalary() const
 double BasePlusCommissionEmployee::earnings() const
 {
 	// derived class cannot access the base class's private data
-	return baseSalary + ( commissionRate * grossSales );
+	return baseSalary + CommissionEmployee::earnings();
 }
 
 void BasePlusCommissionEmployee::print() const
 {
-	cout << "base-salaried commission employee: " << firstName << ' '
-		<< lastName << "\nsocial security number: " << socialSecurityNumber
-		<< "\ngross sales: " <<  grossSales
-		<< "\ncommission rate: " << commissionRate
-		<< "\nbase salary: " << baseSalary;	
+	cout << "base-salaried ";
+
+	// invoke CommissionEmployee's print function
+	CommissionEmployee::print();
+
+	cout << "\nbase salary: " << getBaseSalary();	
 }

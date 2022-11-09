@@ -27,7 +27,7 @@ class CommissionEmployee
 		double earnings() const;
 		void print() const;
 
-	protected:
+	private:
 		std::string firstName;
 		std::string lastName;
 		std::string socialSecurityNumber;
