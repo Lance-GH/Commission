@@ -95,3 +95,8 @@ void CommissionEmployee::print() const
 		<< "\ngross sales: " << grossSales
 		<< "\ncommission rate: " << commissionRate;
 }
+
+CommissionEmployee::~CommissionEmployee() 
+{
+       cout << " destructor runs " << endl;	
+}

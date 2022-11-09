@@ -9,6 +9,8 @@ class CommissionEmployee
 		CommissionEmployee( const std::string &, const std::string &,
 			const std::string &, double = 0.0, double = 0.0);
 
+		virtual ~CommissionEmployee(); // virtual destructor
+
 		void setFirstName( const std::string & );
 		std::string getFirstName() const;
 
